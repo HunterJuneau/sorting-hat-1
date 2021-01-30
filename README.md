@@ -23,13 +23,13 @@ This is what the finished app should have:
 
 - You should also be able to expel a student after they have been sorted, which should remove their card from the student record.
 
-In the end, your app will look something like: 
+In the end, your app will look something like this: 
 ![Sorting Hat Mockup](https://github.com/nss-nightclass-projects/exercise-vault/raw/master/images/sorting-hat-mockup.png)
 
 [See Demo](https://drt-sortinghat.netlify.app/)
 
 ## Technical Requirements
-- You MUST plan your project and create issue tickets and a project board fro your project
+- You MUST plan your project and create issue tickets and a project board for your project
 - You MAY use the `printToDom()` function that we worked on in class, but you also need to be able to explain it if you use it
 - You have to create a data structure for your project. Review all the elements that need to be on the DOM and create the structure accordingly
 - You must use [Boostrap](https://getbootstrap.com/) to style your page components
@@ -48,5 +48,5 @@ Think of a way you can expel students without just hiding those divs on the page
 
 ## Optional Bonus
 - House Colors: The color of the student's card changes depending on which house they were sorted. 
-- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
+- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name or house)
 - Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
