@@ -3,8 +3,6 @@ const students = [];
 const houses = [
   {
     name: 'Gryffindor',
-    crest:
-      'https://static.wikia.nocookie.net/harrypotter/images/e/ee/Gryffindor_Crest-0.jpg/revision/latest/scale-to-width-down/182?cb=20160729145529',
     colors: {
       primary: '#ff2400',
       secondary: 'gold',
@@ -12,8 +10,6 @@ const houses = [
   },
   {
     name: 'Hufflepuff',
-    crest:
-      'https://static.wikia.nocookie.net/harrypotter/images/d/da/Hufflepuff_House_Crest_old.jpg/revision/latest/scale-to-width-down/160?cb=20160729145653',
     colors: {
       primary: 'yellow',
       secondary: 'black',
@@ -21,8 +17,6 @@ const houses = [
   },
   {
     name: 'Ravenclaw',
-    crest:
-      'https://static.wikia.nocookie.net/harrypotter/images/7/77/Ravenclaw_House_Crest.jpg/revision/latest/scale-to-width-down/160?cb=20160729145945',
     colors: {
       primary: 'blue',
       secondary: '#cd7f32',
@@ -30,8 +24,6 @@ const houses = [
   },
   {
     name: 'Slytherin',
-    crest:
-      'https://static.wikia.nocookie.net/harrypotter/images/7/71/Slytherin_crest_old.jpg/revision/latest/scale-to-width-down/160?cb=20160729150848',
     colors: {
       primary: '#50c878',
       secondary: 'silver',
@@ -62,10 +54,27 @@ const getRandomHouse = () => {
   return houses[Math.floor(Math.random() * 4)];
 };
 
+const buildStudentCards = () => {
+  let domString = '';
+
+  for (student of students) {
+    domString += `<div class="card m-3 border-dark" style="width: 15rem;">
+                    <div class="card-body">
+                      <h2 class="card-title">${student.name}</h2>
+                      <h4 class="card-subtitle my-3">${student.house.name}</h4>
+                      <button class="btn btn-danger">Expel Student</button>
+                    </div>
+                  </div>`;
+  }
+
+  printToDom('#studentContainer', domString);
+};
+
 const sortStudent = (e) => {
   e.preventDefault();
 
   const studentName = document.querySelector('#student').value;
+  document.querySelector('#form').reset;
 
   const student = {
     name: studentName,
@@ -73,6 +82,7 @@ const sortStudent = (e) => {
   };
 
   students.push(student);
+  buildStudentCards();
 };
 
 const eventListeners = () => {
