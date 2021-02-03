@@ -1,58 +1,7 @@
+import printToDom from './printToDom.js';
+import randomHouse from './randomHouse.js';
+
 const students = [];
-
-const houses = [
-  {
-    name: 'Gryffindor',
-    colors: {
-      primary: '#ff2400',
-      secondary: 'gold',
-    },
-  },
-  {
-    name: 'Hufflepuff',
-    colors: {
-      primary: 'yellow',
-      secondary: 'black',
-    },
-  },
-  {
-    name: 'Ravenclaw',
-    colors: {
-      primary: 'blue',
-      secondary: '#cd7f32',
-    },
-  },
-  {
-    name: 'Slytherin',
-    colors: {
-      primary: '#50c878',
-      secondary: 'silver',
-    },
-  },
-];
-
-const printToDom = (selector, text) => {
-  const selectedDiv = document.querySelector(selector);
-  selectedDiv.innerHTML = text;
-};
-
-const buildForm = () => {
-  let domString = '';
-
-  domString += `<form class="w-50 mx-auto my-3 p-3 border border-dark rounded" id="form">
-                  <div class="mb-3">
-                    <label for="student" class="form-label">Student Name</label>
-                    <input type="text" class="form-control" id="student" name="student" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Sort</button>
-                </form>`;
-
-  printToDom('#form', domString);
-};
-
-const getRandomHouse = () => {
-  return houses[Math.floor(Math.random() * 4)];
-};
 
 const buildStudentCards = () => {
   let domString = '';
@@ -78,7 +27,7 @@ const sortStudent = (e) => {
 
   const student = {
     name: studentName,
-    house: getRandomHouse(),
+    house: randomHouse.getRandomHouse(),
   };
 
   students.push(student);
@@ -95,7 +44,7 @@ const deleteStudent = (e) => {
 };
 
 const eventListeners = () => {
-  document.querySelector('#formButton').addEventListener('click', buildForm);
+  document.querySelector('#formButton').addEventListener('click', randomHouse.buildForm);
   document.querySelector('#form').addEventListener('submit', sortStudent);
   document
     .querySelector('#studentContainer')
