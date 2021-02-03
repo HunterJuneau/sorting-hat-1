@@ -42,7 +42,7 @@ const buildForm = () => {
   domString += `<form class="w-50 mx-auto my-3 p-3 border border-dark rounded" id="form">
                   <div class="mb-3">
                     <label for="student" class="form-label">Student Name</label>
-                    <input type="text" class="form-control" id="student" name="student">
+                    <input type="text" class="form-control" id="student" name="student" required>
                   </div>
                   <button type="submit" class="btn btn-primary">Sort</button>
                 </form>`;
