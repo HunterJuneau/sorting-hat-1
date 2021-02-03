@@ -57,12 +57,12 @@ const getRandomHouse = () => {
 const buildStudentCards = () => {
   let domString = '';
 
-  for (student of students) {
-    domString += `<div class="card m-3 border-dark" style="width: 15rem;">
+  for (const [i, student] of students.entries()) {
+    domString += `<div class="card m-3 border-dark" style="width: 15rem;" id="student${i}">
                     <div class="card-body">
                       <h2 class="card-title">${student.name}</h2>
                       <h4 class="card-subtitle my-3">${student.house.name}</h4>
-                      <button class="btn btn-danger">Expel Student</button>
+                      <button class="btn btn-danger" id="${i}">Expel Student</button>
                     </div>
                   </div>`;
   }
@@ -85,9 +85,21 @@ const sortStudent = (e) => {
   buildStudentCards();
 };
 
+const deleteStudent = (e) => {
+  if (e.target.type === 'submit') {
+    const studentIndex = Number(e.target.id);
+
+    students.splice(studentIndex, 1);
+    document.querySelector(`#student${studentIndex}`).remove();
+  }
+};
+
 const eventListeners = () => {
   document.querySelector('#formButton').addEventListener('click', buildForm);
   document.querySelector('#form').addEventListener('submit', sortStudent);
+  document
+    .querySelector('#studentContainer')
+    .addEventListener('click', deleteStudent);
 };
 
 const init = () => {
