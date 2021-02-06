@@ -2,6 +2,13 @@
 
 ### [Deployed Site](https://hj-sortinghat.netlify.app/)
 
+### What I Learned
+
+Planning
+- How to make issue tickets.
+- How to organize Github projects.
+- How to prioritize tasks.
+
 ## Goals
 The goal of this project is to test your knowledge and to have a FUN time stretching yourself on your FIRST independent application that will become a part of your portfolio.
 
