@@ -4,7 +4,7 @@
 
 ## What I Learned
 
-Planning
+#### Planning
 - How to make issue tickets.
 - How to organize Github projects.
 - How to prioritize tasks.
