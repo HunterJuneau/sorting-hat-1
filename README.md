@@ -2,7 +2,7 @@
 
 ### [Deployed Site](https://hj-sortinghat.netlify.app/)
 
-### What I Learned
+## What I Learned
 
 Planning
 - How to make issue tickets.
