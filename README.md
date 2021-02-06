@@ -2,6 +2,8 @@
 
 ### [Deployed Site](https://hj-sortinghat.netlify.app/)
 
+### [Site Walkthrough](https://www.loom.com/share/78ef813bf73448969bfc6cae6dddeb92)
+
 ## What I Learned
 
 #### Planning
